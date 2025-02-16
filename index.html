@@ -12,8 +12,117 @@
 
     <style>
         span {
-            color: #ffd429;
+            color: #ffcc00;
         }
+
+        .name {
+            color: #ffcc00;
+            margin: 0 5px;
+            font-family: "Garamond", serif;
+            font-size: 18px;
+        }
+        
+        span {
+            margin-left: 10px;
+            font-weight: bold;
+        }
+        
+        
+        .nav-right p {
+            transition: color 0.3s ease-in-out;
+        }
+        
+        .nav-right p:hover {
+            color: #00a8e8;
+            text-decoration-thickness: 2px;
+            font-size: 18px;
+        }
+        
+        
+        .logo {
+            vertical-align: middle;
+            width: 45px;
+        }
+        
+        .main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap:10px; 
+            max-width: 100%; 
+            margin: 150px ; 
+            align-items: center;
+            justify-items: center;
+        }
+        
+        
+        
+        .description {
+            font-family: "Playfair Display", serif;
+            font-size: 15px;
+            color: #ffffff;
+            display: inline-block;
+            margin-right: 10px;
+            margin-top: -120px;
+            justify-items: center;
+        }
+        
+        .intro-text {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #ffcc00;
+        }
+        
+        .sub-text {
+            font-family: "Poppins", sans-serif;
+            font-size: 1.2em;
+            color: #ddd;
+        }
+        
+        .profile-pic {
+            display: inline-block;
+            vertical-align: middle;
+            width: 150px;
+            justify-items: center;
+        }
+        
+        .profile {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgb(255, 219, 15);
+            transition: border 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            
+        }
+        
+        .profile:hover {
+            border: 4px solid rgb(24, 200, 240);
+            cursor: pointer;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+    .main {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 50px; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .profile-pic {
+        margin: auto;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .description {
+        margin-bottom: -15px; 
+    }
+}
+
+        
     </style>
 </head>
 <body style="background-color: #121212;">
@@ -43,7 +152,6 @@
         <div class="profile-pic">
             <img src="./Images/Profile.png" alt="Profile" class="profile">
         </div>
-    </div>
-
+    </div>  
 </body>
 </html>
