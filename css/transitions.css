@@ -1,0 +1,113 @@
+/* Page Transition Styles */
+.page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120vh; /* Extra height to cover potential gaps */
+  background-color: #0a0a14; /* Solid background color matching primary-dark */
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  will-change: opacity, transform; /* Hardware acceleration hint for both properties */
+  transition: opacity 0.10s ease; /* Even faster transition */
+  pointer-events: none; /* Allow clicks through when hidden */
+  transform: translateZ(0); /* Force GPU acceleration */
+}
+
+/* Hide scrollbar during transitions */
+body.transitioning {
+  overflow: hidden;
+}
+
+/* Ensure consistent background color during transitions */
+html, body {
+  background-color: #0a0a14 !important; /* Force exact color value with !important */
+  margin: 0;
+  padding: 0;
+  transition: none !important; /* Prevent any transition of background color */
+}
+
+/* Content transition animations - faster animations */
+.content-container {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s forwards 0.1s;
+}
+
+/* Hero text animations - faster with reduced delay */
+.hero-text h1 {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeInUp 0.4s forwards 0.2s;
+}
+
+.hero-text .subtitle {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeInUp 0.4s forwards 0.3s;
+}
+
+.hero-text .hero-buttons {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeInUp 0.4s forwards 0.4s;
+}
+
+.hero-text .social-links {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeInUp 0.4s forwards 0.5s;
+}
+
+.hero-image {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeInScale 0.5s forwards 0.3s;
+}
+
+/* Section animations */
+.section-title {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeInUp 0.4s forwards 0.2s;
+}
+
+/* Generic animations - smoother and faster */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Page exit animation - faster transition */
+.page-exit {
+  animation: fadeOutDown 0.2s forwards;
+}
+
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}

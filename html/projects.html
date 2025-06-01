@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: #0a0a14; color: #ffffff;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Nisanth S Portfolio</title>
+  <!-- Prevent FOUC (Flash Of Unstyled Content) and page transition flashes -->
+  <style>
+    html, body { background-color: #0a0a14 !important; color: #ffffff; }
+  </style>
+  <script>
+    document.documentElement.style.backgroundColor = '#0a0a14';
+    document.documentElement.style.visibility = 'visible';
+  </script>  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/transitions.css">
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: var(--primary-dark);
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Page Title Section */
+    .page-title {
+      padding: 150px 0 60px;
+      text-align: center;
+      position: relative;
+    }
+    
+    .page-title h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .page-title h1::after {
+      content: '';
+      position: absolute;
+      width: 60%;
+      height: 3px;
+      background-color: var(--neon-blue);
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: var(--neon-blue-glow);
+    }
+    
+    .page-title p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 18px;
+      color: #bebebe;
+    }
+    
+    /* Project Filters */
+    .project-filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 30px 0 50px;
+    }
+    
+    .filter-btn {
+      padding: 8px 20px;
+      background-color: transparent;
+      border: 2px solid var(--neon-blue);
+      color: white;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    
+    .filter-btn:hover {
+      background-color: rgba(77, 238, 234, 0.1);
+      box-shadow: 0 0 10px rgba(77, 238, 234, 0.3);
+    }
+    
+    .filter-btn.active {
+      background-color: var(--neon-blue);
+      color: var(--primary-dark);
+      box-shadow: 0 0 10px rgba(77, 238, 234, 0.5);
+    }
+    
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+    
+    .project-card {
+      border-radius: 15px;
+      overflow: hidden;
+      background-color: var(--secondary-dark);
+      border: 1px solid rgba(77, 238, 234, 0.2);
+      transition: all 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 10px rgba(77, 238, 234, 0.3);
+      border: 1px solid rgba(77, 238, 234, 0.5);
+    }
+    
+    .project-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 1px solid rgba(77, 238, 234, 0.2);
+    }
+    
+    .project-content {
+      padding: 25px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+    
+    .project-tag {
+      padding: 5px 10px;
+      background-color: rgba(77, 238, 234, 0.1);
+      border-radius: 15px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--neon-blue);
+    }
+    
+    .project-title {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: white;
+      font-weight: 600;
+    }
+    
+    .project-description {
+      color: #bebebe;
+      font-size: 15px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+    
+    .project-links {
+      display: flex;
+      gap: 15px;
+      margin-top: auto;
+    }
+    
+    .project-link {
+      padding: 8px 15px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .project-link-github {
+      background-color: transparent;
+      border: 1px solid #bebebe;
+      color: #bebebe;
+    }
+    
+    .project-link-github:hover {
+      border-color: white;
+      color: white;
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+    
+    .project-link-live {
+      background-color: var(--neon-blue);
+      color: var(--primary-dark);
+      border: 1px solid var(--neon-blue);
+    }
+    
+    .project-link-live:hover {
+      box-shadow: 0 0 10px rgba(77, 238, 234, 0.5);
+    }
+    
+    /* More Projects Button */
+    .more-projects {
+      display: flex;
+      justify-content: center;
+      margin: 50px 0 80px;
+    }
+    
+    .more-projects-btn {
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: 1px;
+      text-decoration: none;
+      background-color: transparent;
+      color: var(--neon-blue);
+      border: 2px solid var(--neon-blue);
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+    
+    .more-projects-btn:hover {
+      background-color: rgba(77, 238, 234, 0.1);
+      box-shadow: 0 0 15px rgba(77, 238, 234, 0.3);
+      transform: translateY(-3px);
+    }
+    
+    
+    .contact-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    
+    .contact-icon {
+      min-width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(77, 238, 234, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--neon-blue);
+    }
+    
+    .contact-text {
+      color: #bebebe;
+      font-size: 15px;
+    }
+    
+    .contact-text a {
+      color: #bebebe;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-text a:hover {
+      color: var(--neon-blue);
+    }
+    
+    
+    
+    .neon-grid {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: 50px 50px;
+      background-image:
+        linear-gradient(to right, rgba(77, 238, 234, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(77, 238, 234, 0.05) 1px, transparent 1px);
+      z-index: -2;
+      pointer-events: none;
+    }
+    
+    /* Responsive Styles */
+    @media screen and (max-width: 1200px) {
+      .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+    }
+    
+    @media screen and (max-width: 992px) {
+      .page-title h1 {
+        font-size: 42px;
+      }
+      
+      .page-title p {
+        font-size: 17px;
+      }
+    }
+    
+    @media screen and (max-width: 768px) {
+      .page-title {
+        padding: 120px 0 40px;
+      }
+      
+      .page-title h1 {
+        font-size: 36px;
+      }
+      
+      .page-title p {
+        font-size: 16px;
+      }
+      
+      .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+      }
+    }
+    
+    @media screen and (max-width: 576px) {
+      .container {
+        padding: 0 15px;
+      }
+      
+      .page-title h1 {
+        font-size: 32px;
+      }
+      
+      .page-title p {
+        font-size: 15px;
+      }
+      
+      .logo {
+        font-size: 24px;
+      }
+      
+      .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+      
+      .project-card {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      
+      .project-filters {
+        gap: 10px;
+        margin: 20px 0 40px;
+      }
+      
+      .filter-btn {
+        padding: 6px 15px;
+        font-size: 14px;
+      }
+    }
+    
+    @media screen and (max-width: 375px) {
+      .page-title h1 {
+        font-size: 28px;
+      }
+      
+      .page-title p {
+        font-size: 14px;
+      }
+      
+      .logo {
+        font-size: 22px;
+      }
+      
+      .project-title {
+        font-size: 20px;
+      }
+    }
+
+    /* Adjust spacing to remove unintended empty box */
+    .main > *:last-child {
+      margin-bottom: 0;
+    }
+
+    footer {
+      background-color: var(--secondary-dark);
+      padding: 20px 0;
+      text-align: center;
+      color: #ffffff;
+      font-size: 14px;
+    }
+    .copyright {
+      text-align: center;
+      color:var(--neon-blue);
+      font-size: 14px;
+      font-weight: bold;
+}
+.page-transition {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(77, 238, 234, 0.9);
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 600;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    .page-transition.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    
+    .transition-logo {
+      display: inline-block;
+      animation: logoFadeIn 0.5s ease forwards;
+    }
+    
+    @keyframes logoFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>  <!-- Page Transition Overlay -->
+  <div id="page-transition" class="page-transition"></div>
+  
+  <header>
+    <div class="container">
+      <nav>
+        <a href="/index.html" class="logo">Nisa<span>nth S</span></a>       
+         <div class="nav-links">
+          <a href="/index.html">Home</a>
+          <a href="./about.html">About Me</a>
+          <span class="active-nav-item" style="color: #4DEEEA; text-shadow: 0 0 10px #4DEEEA, 0 0 20px #4DEEEA, 0 0 30px #4DEEEA;">Projects</span>
+          <a href="./resume.html">Resume</a>
+          <a href="./contact.html">Contact Me</a>
+        </div>
+        <div class="hamburger">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <div class="container content-container">
+        <h1>My <span class="highlight">Projects</span></h1>
+        <p style="margin-top: 15px;">Explore a collection of my recent work, showcasing my skills in Web Development and Software Development.</p>
+      </div>
+    </section>
+
+    <section class="projects-section">
+      <div class="container">
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="web">Web Development</button>
+          <button class="filter-btn" data-filter="app">App Development</button>
+          <button class="filter-btn" data-filter="software">Software Development</button>
+          <button class="filter-btn" data-filter="other">Other</button>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <div class="project-card" data-category="software">
+            <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*vLqvbydJ0Vno3k6CvAt8Pw.png" alt="Project 1" class="project-image">
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">CLI</span>
+                <span class="project-tag">Procedural Programming</span>
+              </div>BlackJack Console Game</h3>
+              <p class="project-description">A console-based Blackjack game built using Python with a focus on loops, conditionals, and core logic implementation. The game allows a player to play against a computer dealer, handling all aspects of gameplay from card drawing to scoring and win/loss evaluation.</p>
+              <div class="project-links">
+                <a href="https://github.com/Nisanth-2025/Blackjack-Console-Game" target="_blank" class="project-link project-link-github">
+                  <i class="fab fa-github"></i> Source Code
+                </a>
+                <a class="project-link project-link-live">
+                  <i class="fas fa-external-link-alt"></i> No Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card" data-category="">
+            <img src="/api/placeholder/600/400" alt="Project 2" class="project-image">
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="project-tag">N/A</span>
+                <span class="project-tag">N/A</span>
+                <span class="project-tag">N/A</span>
+              </div>
+              <h3 class="project-title">N/A</h3>
+              <p class="project-description">N/A</p>
+              <div class="project-links">
+                <a href="#" class="project-link project-link-github">
+                  <i class="fab fa-github"></i> Source Code
+                </a>
+                <a href="#" class="project-link project-link-live">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card" data-category="">
+            <img src="/api/placeholder/600/400" alt="Project 3" class="project-image">
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="project-tag">N/A</span>
+                <span class="project-tag">N/A</span>
+                <span class="project-tag">N/A</span>
+              </div>
+              <h3 class="project-title">N/A</h3>
+              <p class="project-description">N/A</p>
+              <div class="project-links">
+                <a href="#" class="project-link project-link-github">
+                  <i class="fab fa-github"></i> Source Code
+                </a>
+                <a href="#" class="project-link project-link-live">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-card" data-category="">
+            <img src="/api/placeholder/600/400" alt="Project 4" class="project-image">
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="project-tag">N/A</span>
+                <span class="project-tag">N/A</span>
+                <span class="project-tag">N/A</span>
+              </div>
+              <h3 class="project-title">N/A</h3>
+              <p class="project-description">N/A</p>
+              <div class="project-links">
+                <a href="#" class="project-link project-link-github">
+                  <i class="fab fa-github"></i> Source Code
+                </a>
+                <a href="#" class="project-link project-link-live">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="project-card" data-category="">
+            <img src="/api/placeholder/600/400" alt="Project 5" class="project-image">
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="project-tag">N/A</span>
+                <span class="project-tag">N/A</span>
+                <span class="project-tag">N/A</span>
+              </div>
+              <h3 class="project-title">N/A</h3>
+              <p class="project-description">N/A</p>
+              <div class="project-links">
+                <a href="#" class="project-link project-link-github">
+                  <i class="fab fa-github"></i> Source Code
+                </a>
+                <a href="#" class="project-link project-link-live">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+          <div class="project-card" data-category="">
+            <img src="/api/placeholder/600/400" alt="Project 6" class="project-image">
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="project-tag">N/A</span>
+                <span class="project-tag">N/A</span>
+                <span class="project-tag">N/A</span>
+              </div>
+              <h3 class="project-title">N/A</h3>
+              <p class="project-description">N/A</p>
+              <div class="project-links">
+                <a href="#" class="project-link project-link-github">
+                  <i class="fab fa-github"></i> Source Code
+                </a>
+                <a href="#" class="project-link project-link-live">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+      <div class="copyright">
+        <p>&copy; 2025 Nisanth S. All Rights Reserved.</p>      </div>  </footer>
+  <script src="../js/navbar.js"></script>
+  <script src="../js/transitions.js"></script>
+  <script>
+    // Filter functionality for project categories
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        // Add active class to the clicked button
+        button.classList.add('active');
+
+        const filter = button.getAttribute('data-filter');
+
+        projectCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Page transition functionality
+    const pageTransition = document.getElementById('page-transition');
+
+    function fadeIn(element) {
+      element.classList.add('active');
+      setTimeout(() => {
+        element.classList.remove('active');
+      }, 500); // Match this duration with the CSS transition duration
+    }
+
+    // Call fadeIn on page load
+    window.addEventListener('load', () => {
+      fadeIn(pageTransition);
+    });  </script>
+  
+  <script>
+    // Final check to prevent any background flashes
+    window.addEventListener('load', () => {
+      document.documentElement.style.backgroundColor = '#0a0a14';
+      document.body.style.backgroundColor = '#0a0a14';
+    });
+    window.addEventListener('pageshow', () => {
+      document.documentElement.style.backgroundColor = '#0a0a14';
+      document.body.style.backgroundColor = '#0a0a14';
+    });
+  </script>
+</body>
+</html>
