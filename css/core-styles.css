@@ -1,0 +1,19 @@
+/**
+ * Core-styles.css
+ * Portfolio: Nisanth S
+ * Consolidates variables, typography, and basic utilities
+ */
+
+/* Import variables */
+@import url('./variables.css');
+
+/* Import typography */
+@import url('./typography.css');
+
+/* Import basic components */
+@import url('./components.css');
+
+/* Import animations */
+@import url('./animations.css');
+
+/* This consolidation reduces HTTP requests while maintaining file organization */
