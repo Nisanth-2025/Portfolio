@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sitemap for Nisanth S Portfolio - Professional Web Developer -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  
+  <!-- Homepage - Primary landing page -->
+  <url>
+    <loc>https://nisanth-portfolio.netlify.app/</loc>
+    <lastmod>2025-06-30T12:00:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- About page - Professional background -->
+  <url>
+    <loc>https://nisanth-portfolio.netlify.app/html/about.html</loc>
+    <lastmod>2025-06-30T12:00:00Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Projects page - Portfolio showcase -->
+  <url>
+    <loc>https://nisanth-portfolio.netlify.app/html/projects.html</loc>
+    <lastmod>2025-06-30T12:00:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Resume page - Professional experience -->
+  <url>
+    <loc>https://nisanth-portfolio.netlify.app/html/resume.html</loc>
+    <lastmod>2025-06-30T12:00:00Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Contact page - Professional inquiries -->
+  <url>
+    <loc>https://nisanth-portfolio.netlify.app/html/contact.html</loc>
+    <lastmod>2025-06-30T12:00:00Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+</urlset>
