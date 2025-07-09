@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: #0a0a14; color: #ffffff; border-top: none; margin-top: 0; padding-top: 0;">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Nisanth S</title>
+
+  <style>
+    :root {
+      --primary-dark: #0a0a14;
+      --secondary-dark: #121225;
+      --text-color: #ffffff;
+      --text-muted: #bebebe;
+      --card-bg: rgba(18, 18, 37, 0.7);
+      --card-border: rgba(77, 238, 234, 0.1);
+      --neon-blue: #4DEEEA;
+      --neon-blue-glow: 0 0 10px rgba(77, 238, 234, 0.5);
+      --grid-color: rgba(77, 238, 234, 0.05);
+      --transition-speed: 0.5s;
+      
+      /* Animation Curves */
+      --ultra-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --premium-ease: cubic-bezier(0.4, 0, 0.2, 1);
+      --silk-transition: cubic-bezier(0.23, 1, 0.32, 1);
+      --butter-smooth: cubic-bezier(0.165, 0.84, 0.44, 1);
+      --premium-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    html, body { background-color: #0a0a14 !important; color: #ffffff; }
+  </style>
+  
+  <script>
+    document.documentElement.style.backgroundColor = '#0a0a14';
+    document.documentElement.style.visibility = 'visible';  </script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="../css/typography.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/image-optimization.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <!-- JavaScript -->
+  <script src="../js/form-validation.js" defer></script>
+
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: var(--primary-dark);
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .contact-section {
+      min-height: 100vh;
+      padding: 120px 0 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-title {
+      font-size: 48px;
+      text-align: center;
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 50px;
+      color: #bebebe;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .highlight {
+      color: var(--neon-blue);
+      text-shadow: var(--neon-blue-glow);
+    }
+
+    .contact-container {
+      display: flex;
+      gap: 50px;
+      margin-top: 30px;
+    }    .contact-info {
+      flex: 1;
+      padding: 30px;
+      background: rgba(18, 18, 37, 0.95);
+      border-radius: 15px;
+      border: 1px solid rgba(77, 238, 234, 0.2);
+      /* backdrop-filter removed as requested */
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }    .contact-form {
+      flex: 1.5;
+      padding: 30px;
+      background: rgba(18, 18, 37, 0.95);
+      border-radius: 15px;
+      border: 1px solid rgba(77, 238, 234, 0.2);
+      /* backdrop-filter removed as requested */
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact-info h3, 
+    .contact-form h3 {
+      font-size: 24px;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(77, 238, 234, 0.2);
+      color: var(--neon-blue);
+    }
+
+    .info-item {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 25px;
+      align-items: flex-start;
+    }
+
+    .info-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(77, 238, 234, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--neon-blue);
+      box-shadow: 0 0 10px rgba(77, 238, 234, 0.3);
+      flex-shrink: 0;
+    }
+
+    .info-details h4 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .info-details p, 
+    .info-details a {
+      color: #bebebe;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .info-details a:hover {
+      color: var(--neon-blue);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(77, 238, 234, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--neon-blue);
+      font-size: 18px;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(77, 238, 234, 0.3);
+    }    .social-link:hover {
+      background: rgba(77, 238, 234, 0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 0 15px rgba(77, 238, 234, 0.4);
+      color: var(--neon-blue); /* Ensure color stays blue on hover */
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-group {
+      position: relative;
+    }
+
+    input, 
+    textarea {
+      width: 100%;
+      padding: 15px 20px;
+      background: rgba(10, 10, 20, 0.7);
+      border: 1px solid rgba(77, 238, 234, 0.3);
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    input:focus, 
+    textarea:focus {
+      outline: none;
+      border-color: var(--neon-blue);
+      box-shadow: 0 0 10px rgba(77, 238, 234, 0.3);
+    }
+
+    input::placeholder, 
+    textarea::placeholder {
+      color: #6e6e6e;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 20px;
+    }
+
+    .form-row .form-group {
+      flex: 1;
+    }
+
+    .neon-grid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: 50px 50px;
+      background-image:
+        linear-gradient(to right, rgba(77, 238, 234, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(77, 238, 234, 0.05) 1px, transparent 1px);
+      z-index: -2;
+    }
+
+    .btn {
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: none;
+      font-size: 16px;
+    }
+
+    .btn-primary {
+      background-color: var(--neon-blue);
+      color: var(--primary-dark);
+      border: none;
+      box-shadow: 0 0 10px rgba(77, 238, 234, 0.5);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 0 20px rgba(77, 238, 234, 0.8);
+      transform: translateY(-3px);
+    }
+
+    .success-message {
+      background-color: rgba(72, 187, 120, 0.2);
+      color: #4ade80;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(72, 187, 120, 0.3);
+      display: none;
+    }
+
+    .error-message {
+      background-color: rgba(220, 38, 38, 0.2);
+      color: #f87171;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(220, 38, 38, 0.3);
+      display: none;
+    }
+
+    .loading-spinner {
+      display: none;
+      margin-left: 10px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Map Section */
+
+    .map-section {
+      margin-top: 60px;
+      position: relative;
+    }
+
+    .map-container {
+      height: 400px;
+      border-radius: 15px;
+      overflow: hidden;
+      border: 1px solid rgba(77, 238, 234, 0.2);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .map-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, 
+                  rgba(10, 10, 20, 0.8) 0%, 
+                  rgba(10, 10, 20, 0.4) 100%);
+      pointer-events: none;
+      border-radius: 15px;
+    }
+
+    .map-frame {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Neon glow animation */
+
+    @keyframes neonPulse {
+      0% {
+        box-shadow: 0 0 5px rgba(77, 238, 234, 0.5);
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(77, 238, 234, 0.8);
+      }
+      100% {
+        box-shadow: 0 0 5px rgba(77, 238, 234, 0.5);
+      }
+    }
+
+    .glow-effect {
+      animation: neonPulse 3s infinite;
+    }
+
+    /* Improved Media Queries */
+
+    @media screen and (max-width: 1200px) {
+      .section-title {
+        font-size: 42px;
+      }
+    }
+    
+    @media screen and (max-width: 992px) {
+      .contact-container {
+        flex-direction: column;
+      }
+      
+      .section-title {
+        font-size: 38px;
+      }
+      
+      .section-subtitle {
+        font-size: 17px;
+      }
+    }
+    
+    @media screen and (max-width: 768px) {
+      .section-title {
+        font-size: 32px;
+      }
+      
+      .section-subtitle {
+        font-size: 16px;
+      }
+      
+      .contact-section {
+        padding-top: 100px;
+      }
+      
+      .form-row {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+    
+    @media screen and (max-width: 576px) {
+      .container {
+        padding: 0 15px;
+      }
+      
+      .section-title {
+        font-size: 28px;
+      }
+      
+      .section-subtitle {
+        font-size: 15px;
+      }
+      
+      .logo {
+        font-size: 24px;
+      }
+      
+      .contact-info,
+      .contact-form {
+        padding: 20px;
+      }
+      
+      .map-container {
+        height: 300px;
+      }
+    }
+      @media screen and (max-width: 375px) {
+      .section-title {
+        font-size: 26px;
+      }
+      
+      .logo {
+        font-size: 22px;
+      }
+      
+      .contact-section {
+        padding-top: 80px;
+      }
+      
+      .info-icon {
+        width: 35px;
+        height: 35px;
+      }    }
+    
+    /* Style contact button to ensure visibility */
+    .contact-submit-btn {
+      background-color: var(--neon-blue) !important;
+      color: #ffffff !important;
+    }/* Custom cursor effect */
+    /* Cursor effects disabled for better UX */
+    
+    /* Enhanced Background Elements */
+    .bg-animated-gradient {
+      position: fixed;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: transparent;
+      z-index: -3;
+      pointer-events: none;
+    }
+    
+    .bg-animated-gradient::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(
+        circle at center,
+        rgba(77, 238, 234, 0.03) 0%,
+        rgba(106, 119, 255, 0.02) 25%,
+        rgba(0, 0, 0, 0) 70%
+      );
+      animation: rotateGradient 30s linear infinite;
+    }
+    
+    @keyframes rotateGradient {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    
+    /* Glowing Orbs */
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      opacity: 0.3;
+      filter: blur(60px);
+      pointer-events: none;
+      z-index: -2;
+    }
+    
+    .orb-1 {
+      top: 15%;
+      left: 10%;
+      width: 300px;
+      height: 300px;
+      background-color: rgba(77, 238, 234, 0.2);
+      animation: floatAnimation 15s ease-in-out infinite alternate;
+    }
+    
+    .orb-2 {
+      bottom: 10%;
+      right: 15%;
+      width: 400px;
+      height: 400px;
+      background-color: rgba(106, 119, 255, 0.15);
+      animation: floatAnimation 18s ease-in-out infinite alternate-reverse;
+    }
+    
+    @keyframes floatAnimation {
+      0% {
+        transform: translate(0, 0);
+      }
+      50% {
+        transform: translate(-20px, -30px);
+      }
+      100% {
+        transform: translate(20px, 20px);
+      }
+    }      /* Scroll to top styles moved to scroll-to-top.css */
+      /* Footer styles are now in external footer.css */
+  </style>
+
+</head>
+
+<body>    <!-- Page Transition Overlay -->
+  <div id="page-transition" class="page-transition"></div>
+  
+  <!-- Background Effects -->
+  <div class="neon-grid"></div>
+  <div class="bg-animated-gradient"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  
+  <!-- Custom cursor effect elements -->
+  <!-- Background effects and page structure -->
+  
+  <header>
+    <div class="container">
+      <nav>        <a href="../index.html" class="logo">Nisa<span>nth S</span></a>
+        <div class="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="./about.html">About Me</a>
+          <a href="./projects.html">Projects</a>
+          <a href="./resume.html">Resume</a>
+          <span class="active-nav-item" aria-current="page">Contact Me</span>
+        </div>
+
+        <div class="hamburger">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-section">
+      <div class="container content-container">
+        <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
+        <p class="section-subtitle">Feel free to contact me for any work or suggestions. Let's create something amazing together!</p>
+        
+        <div class="contact-container">
+          <div class="contact-info">
+            <h3>Contact Information</h3>
+            
+            <div class="info-item">
+              <div class="info-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="info-details">
+                <h4>Location</h4>
+                <p>Bengaluru, Karnataka, India</p>
+              </div>
+            </div>
+            
+            <div class="info-item">
+              <div class="info-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="info-details">
+                <h4>Email</h4>
+                <a href="mailto:nisanth.s@example.com">Nisanth252025@gmail.com</a>
+              </div>
+            </div>
+            
+            <div class="info-item">
+              <div class="info-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="info-details">
+                <h4>Phone</h4>
+                <a href="tel:+919876543210">+91 7358900641</a>
+              </div>
+            </div>
+            
+            <div class="info-item">
+              <div class="info-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div class="info-details">
+                <h4>Education</h4>
+                <p>Pursuing B.Tech in Computer Science and Engineering</p>
+              </div>
+            </div>
+            
+            <div class="social-links">
+              <a href="https://github.com/Nisanth-2025" class="social-link" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/nisanth-s-835b58318/" class="social-link" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://x.com/NisanthS677130" class="social-link" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://app.netlify.com/teams/nisanth-2025/projects" class="social-link" target="_blank">
+                <i class="fas fa-globe"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class="contact-form glow-effect">
+            <h3>Send Me a Message</h3>
+            
+            <div id="success-message" class="success-message">
+              Your message has been sent successfully! I'll get back to you soon.
+            </div>
+            
+            <div id="error-message" class="error-message">
+              Oops! There was a problem sending your message. Please try again.
+            </div>
+            
+            <form id="contactForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                
+                <div class="form-group">
+                  <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+              </div>
+              
+              <div class="form-group">
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+              </div>
+                <button type="submit" class="btn btn-primary contact-submit-btn">
+                Send Message
+                <i id="loading-spinner" class="fas fa-spinner loading-spinner"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+        
+        <div class="map-section">
+          <div class="map-container">
+            <iframe 
+              class="map-frame"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497699.9974179678!2d79.96144386594322!3d13.04762307633426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265ea4f7d3361%3A0x6e61a70b6863d433!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1715695833467!5m2!1sen!2sin" 
+              allowfullscreen="" 
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <div class="map-overlay"></div>
+          </div>
+        </div>
+      </div>
+      <div class="neon-grid"></div>
+    </section>
+  </main>
+
+    <footer>
+      <div class="copyright">
+        <p>&copy; 2025 Nisanth S. All Rights Reserved.</p>
+      </div>
+    </footer>
+    
+    <div class="scroll-to-top" id="scroll-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+  <script src="../js/navbar.js"></script>
+  <script src="../js/image-optimization.js" defer></script>
+  <script src="../js/transitions.js"></script>
+  <script src="../js/scroll-utilities.js"></script>
+  <script src="../js/effects.js"></script>
+  
+  <script>
+    // Scroll to top button functionality
+    const scrollToTopBtn = document.getElementById('scroll-to-top');
+
+    const toggleScrollToTopBtn = () => {
+      if (window.scrollY > 300) {
+        scrollToTopBtn.classList.add('visible');
+      } else {
+        scrollToTopBtn.classList.remove('visible');
+      }
+    };
+
+    window.addEventListener('scroll', toggleScrollToTopBtn);
+
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+  
+  <script>
+    // Contact form functionality with backend connection
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const subjectInput = document.getElementById('subject');
+      const messageInput = document.getElementById('message');
+      const loadingSpinner = document.getElementById('loading-spinner');
+      const successMessage = document.getElementById('success-message');
+      const errorMessage = document.getElementById('error-message');
+      
+      // Hide any existing messages
+      successMessage.style.display = 'none';
+      errorMessage.style.display = 'none';
+      
+      // Show loading spinner
+      loadingSpinner.style.display = 'inline-block';
+      
+      // Form data object
+      const formData = {
+        name: nameInput.value.trim(),
+        email: emailInput.value.trim(),
+        subject: subjectInput.value.trim(),
+        message: messageInput.value.trim()
+      };
+      
+      // Send data to backend using Formspree (no backend required)
+      fetch('https://formspree.io/f/xjkwjgny', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(response => {
+        loadingSpinner.style.display = 'none';
+        
+        if (response.ok) {
+          // Success
+          successMessage.style.display = 'block';
+          // Reset form
+          document.getElementById('contactForm').reset();
+        } else {
+          // Error
+          errorMessage.style.display = 'block';
+          throw new Error('Form submission failed');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        loadingSpinner.style.display = 'none';
+        errorMessage.style.display = 'block';
+      });
+    });
+    
+    // Input field glow effect on focus
+    const inputs = document.querySelectorAll('input, textarea');
+    
+    inputs.forEach(input => {
+      input.addEventListener('focus', function() {
+        this.parentElement.classList.add('glow-effect');
+      });
+      
+      input.addEventListener('blur', function() {
+        this.parentElement.classList.remove('glow-effect');
+      });
+    });  </script>
+  
+  <script>
+    // Final check to prevent any background flashes
+    window.addEventListener('load', () => {
+      document.documentElement.style.backgroundColor = '#0a0a14';
+      document.body.style.backgroundColor = '#0a0a14';
+    });
+    window.addEventListener('pageshow', () => {
+      document.documentElement.style.backgroundColor = '#0a0a14';
+      document.body.style.backgroundColor = '#0a0a14';
+    });
+  </script>
+</body>
+</html>
