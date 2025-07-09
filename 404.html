@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: #0a0a14; color: #ffffff; border-top: none; margin-top: 0; padding-top: 0;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Page Not Found | Nisanth S</title>
+  <meta name="description" content="The page you're looking for doesn't exist or has been moved.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- Stylesheet links -->
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./css/typography.css">
+  <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/navbar.css">
+  <link rel="stylesheet" href="./css/animations.css">  <link rel="stylesheet" href="./css/scroll-to-top.css">
+  <link rel="stylesheet" href="./css/accessibility.css">
+  <link rel="stylesheet" href="./css/fixes.css">
+  
+  <!-- Scripts -->
+
+  <style>
+    :root {
+      --primary-dark: #0a0a14;
+      --secondary-dark: #121225;
+      --text-color: #ffffff;
+      --text-muted: #bebebe;
+      --card-bg: rgba(18, 18, 37, 0.7);
+      --card-border: rgba(77, 238, 234, 0.1);
+      --neon-blue: #4DEEEA;
+      --neon-blue-glow: 0 0 10px rgba(77, 238, 234, 0.5);
+      --grid-color: rgba(77, 238, 234, 0.05);
+      --transition-speed: 0.5s;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: var(--primary-dark);
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+    
+    .error-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    
+    .error-code {
+      font-size: 8rem;
+      font-weight: bold;
+      margin: 0;
+      line-height: 1;
+      color: var(--neon-blue);
+      text-shadow: var(--neon-blue-glow);
+      animation: pulse 2s var(--premium-bounce) infinite;
+    }
+    
+    .error-title {
+      font-size: 2.5rem;
+      margin: 1rem 0 2rem;
+    }
+    
+    .error-message {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      color: var(--text-muted);
+    }
+    
+    .home-link {
+      margin-top: 2rem;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: transparent;
+      color: var(--neon-blue);
+      border: 2px solid var(--neon-blue);
+      border-radius: 4px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s var(--butter-smooth);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--neon-blue);
+      transition: all 0.4s var(--premium-ease);
+      z-index: -1;
+    }
+    
+    .btn:hover {
+      color: var(--primary-dark);
+      text-shadow: none;
+      box-shadow: 0 0 15px var(--neon-blue);
+    }
+    
+    .btn:hover::before {
+      left: 0;
+    }
+    
+    .error-illustration {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      margin: 2rem 0;
+      opacity: 0.8;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    /* Simple responsive adjustments */
+    @media (max-width: 768px) {
+      .error-code {
+        font-size: 6rem;
+      }
+      
+      .error-title {
+        font-size: 2rem;
+      }
+
+      .error-illustration {
+        max-width: 350px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .error-code {
+        font-size: 4rem;
+      }
+      
+      .error-title {
+        font-size: 1.5rem;
+      }
+
+      .error-illustration {
+        max-width: 250px;
+      }
+    }
+  </style>
+
+  <script defer>
+    // Track 404 errors in analytics (if you add analytics later)
+    if (typeof gtag === 'function') {
+      gtag('event', '404_error', {
+        'event_category': 'error',
+        'event_label': document.referrer + ' -> ' + window.location.href,
+        'non_interaction': true
+      });
+    }
+  </script>
+</head>
+<body>
+  <main class="error-page">
+    <h1 class="error-code">404</h1>
+    <h2 class="error-title">Page Not Found</h2>
+    
+    <p class="error-message">The page you're looking for doesn't exist or has been moved to another location.</p>
+    
+    <!-- You can add a custom SVG or image here -->
+    <svg class="error-illustration" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 860 571.9">
+      <path d="M768.7 427.8c-1.3-.7-2.6-1.4-3.8-2.2l2-2.9c.2.1 18.8 12.8 30.8 16.1a10 10 0 0 0 7.9-.9c1.6-1 5.1-4.2 2-10.7-2.2-4.5-7.1-7.9-13.2-9.1l.7-3.4c7 1.4 12.8 5.5 15.5 10.8 4.7 9.6-1.3 15-3.7 16.5a13.4 13.4 0 0 1-10.9 1.3c-12.9-3.4-32-16.5-32.5-16.8l2.2 1.3Z" fill="#4deeea" opacity=".3"/>
+      <path d="m216.3 324.3-2.3 4.9c-42.2-20-104.5-54.7-159.7-92.2a273.1 273.1 0 0 1-43.2-35c.7-1.2 1.4-2.3 2.1-3.4A271.2 271.2 0 0 0 55 233.5c55.2 37.3 117.2 71.9 159.3 91.8l2 -1Z" fill="#4deeea" opacity=".3"/>
+      <path d="M580.7 535.9c-.4.2-.8.3-1.3.4-2.9.9-5.9 1.8-9 2.7a347.2 347.2 0 0 1-370.6-138.1v-.3c-.5-.8-1-1.6-1.5-2.4-1-1.5-1.9-3.1-2.9-4.6-.5-.8-1-1.6-1.5-2.5l.1-.1c-.4-.6-.7-1.2-1.1-1.8v-.1a201.6 201.6 0 0 1-25.5-60.6 200.4 200.4 0 0 1 119-231.2l34.4-14.5.4 1V83a107.2 107.2 0 0 0 28.3 73.3c20.1 21.1 50.1 34.6 81.5 34.6a126 126 0 0 0 31.2-3.8l10.5-2.6a80.6 80.6 0 0 1 19.5-2.4c30.6 0 58.9 18.5 76.2 49.2a139 139 0 0 1 16.1 65.4v11.1a1.2 1.2 0 0 0 .1.5c.1.6.1 1.1.2 1.7v.6l-.1 3.6v1c0 .4-.1.8-.1 1.3v.6c-.1.9-.2 1.9-.4 2.8-.1.7-.2 1.4-.4 2.1-.1.8-.3 1.5-.5 2.3-.2.8-.4 1.5-.5 2.3-.2.7-.4 1.4-.6 2.1-.2.8-.5 1.5-.8 2.3-.2.7-.5 1.3-.8 2-.3.8-.6 1.5-1 2.2-.3.6-.6 1.3-.9 1.9-.4.7-.8 1.5-1.2 2.2-.3.6-.7 1.2-1.1 1.8l-1.3 2.1c-.4.6-.8 1.1-1.3 1.7l-1.5 2c-.4.5-.9 1.1-1.4 1.6-.5.6-1.1 1.3-1.7 1.9-.5.5-1 1-1.5 1.5-.6.6-1.2 1.2-1.8 1.8-.5.5-1.1 1-1.6 1.4a47 47 0 0 1-3.9 3c-.5.4-1.1.7-1.7 1.1-.8.5-1.5 1-2.3 1.4-.5.3-1.1.6-1.6.9-.1 0-.1.1-.2.1-1 .5-2.1 1-3.2 1.4h-.1c-2.2 1-4.4 1.8-6.7 2.5-2.3.7-4.8 1.3-7.2 1.8-.3.1-.7.1-1 .2h-.9c-1.8.3-3.5.5-5.3.7h-1.4c-.7.1-1.4.1-2.1.1h-8.6c-.7 0-1.4-.1-2.1-.1h-1.4c-1.8-.2-3.5-.4-5.3-.7h-.9c-.3-.1-.7-.1-1-.2-2.4-.5-4.9-1.1-7.2-1.8-2.3-.7-4.5-1.5-6.7-2.5h-.1c-1.1-.4-2.2-.9-3.2-1.4-.1 0-.1-.1-.2-.1-.5-.3-1-.6-1.6-.9-.8-.4-1.5-.9-2.3-1.4-.6-.4-1.1-.7-1.7-1.1-1.3-1-2.6-1.9-3.9-3-.6-.5-1.1-1-1.6-1.4-.6-.6-1.2-1.2-1.8-1.8-.5-.5-1-1-1.5-1.5-.6-.6-1.1-1.3-1.7-1.9-.5-.5-.9-1.1-1.4-1.6-.5-.7-1-1.3-1.5-2-.4-.6-.8-1.1-1.3-1.7l-1.3-2.1c-.4-.6-.7-1.2-1.1-1.8-.4-.7-.8-1.5-1.2-2.2-.3-.6-.6-1.3-.9-1.9-.3-.7-.7-1.5-1-2.2-.3-.7-.5-1.3-.8-2-.3-.8-.5-1.5-.8-2.3-.2-.7-.4-1.4-.6-2.1-.2-.8-.4-1.5-.5-2.3-.2-.8-.3-1.5-.5-2.3-.1-.7-.3-1.4-.4-2.1-.1-.9-.3-1.9-.4-2.8v-.7c0-.4-.1-.8-.1-1.2v-1l-.1-3.6v-.6c0-.6.1-1.1.2-1.7a1.2 1.2 0 0 0 .1-.5v-11.1a139 139 0 0 1 16.1-65.4c16.7-30.3 44.3-48.7 74.3-49.2h1.9a16.8 16.8 0 0 1-1.9 33.6h-1.3c-19.1.3-36.9 13.3-47.9 34.5a106.2 106.2 0 0 0-12.1 49.7v10.6s0 .1-.1.2c-.1.5-.1.9-.2 1.4v.5l.1 2.7v.7c0 .3.1.6.1.9v.5c.1.7.2 1.3.3 2 .1.5.2 1 .3 1.5.1.5.2 1.1.4 1.6.1.5.3 1.1.4 1.6.1.5.3 1 .4 1.4.2.6.4 1.1.6 1.6.2.5.4 1 .6 1.4.2.5.4 1 .7 1.6.2.4.4.9.7 1.3l.9 1.6c.2.4.5.8.8 1.2.3.5.6 1 1 1.5.3.4.6.8.9 1.2.3.4.7.9 1.1 1.3.3.4.7.7 1 1.1.4.4.8.8 1.2 1.2.4.3.7.7 1.1 1 .4.4.8.7 1.3 1.1.4.3.8.6 1.2.9l1.3.9c.4.3.8.5 1.3.8.4.2 1 .6 1.5 1 .4.2 1 .6 1.5 1h.1c1.8 1.5 3.5 2.8 5.3 3.9 1.6 1.1 3.3 2 5.1 2.8a47.5 47.5 0 0 0 22 3c.2 0 .5-.1.7-.1H430.6c.2 0 .5.1.7.1 7.7-.6 15-3.1 22-7.8 1.8-.8 3.5-1.7 5.1-2.8 1.7-1.1 3.3-2.4 5-3.8h.3c-.6 1-1.3 2-2 3-1.9 2.2-5.4 5.9-10 9.1a61.5 61.5 0 0 1-30.2 10.9c-.3 0-.5 0-.8.1h-6.7c-.3 0-.5 0-.8-.1a61.5 61.5 0 0 1-30.2-10.9 55.7 55.7 0 0 1-13-13.7c-.1-.2-.1-.2-.2-.1 0 0-.1.1-.1.2-.9 1.5-1.9 3.1-2.9 4.6-.5.8-1 1.6-1.6 2.4v.3a346.2 346.2 0 0 0 330.6 142.3c-2.6.9-5.3 1.8-8 2.6-.4.1-.9.3-1.3.4-40.1 12.4-84.5 19.3-131.2 19.3-100.8 0-193-31.7-260.8-83.3 1.3 1.1 2.7 2.3 4.1 3.4 69 53.2 163 85.7 266 85.7 46.7 0 91-6.9 131.3-19.2Z" fill="#4deeea" opacity=".3"/>
+    </svg>
+    
+    <div class="home-link">
+      <a href="/" class="btn">Back to Homepage</a>
+    </div>
+  </main>
+</body>
+</html>
