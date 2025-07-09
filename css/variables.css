@@ -1,0 +1,60 @@
+/* Color variables and theme configuration */
+:root {
+  /* Core theme colors */
+  --primary-dark: #0a0a14;
+  --secondary-dark: #12122a;
+  --tertiary-dark: #1a1a35;
+  
+  /* Accent colors */
+  --neon-blue: #4deeea;
+  --neon-purple: #a166ff;
+  --neon-pink: #ff5e7d;
+  
+  /* Text colors */
+  --text-light: #ffffff;
+  --text-muted: #bebebe;
+  --text-dark: #333333;
+  
+  /* Gradients and transitions */
+  --gradient-blue: linear-gradient(135deg, #4deeea, #40b8b5);
+  --gradient-purple: linear-gradient(135deg, #a166ff, #7a4ae3);
+  --gradient-mixed: linear-gradient(90deg, #4deeea, #a166ff);
+  
+  /* Shadows and glows */
+  --neon-blue-glow: 0 0 10px rgba(77, 238, 234, 0.7);
+  --neon-purple-glow: 0 0 10px rgba(161, 102, 255, 0.7);
+  --subtle-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  
+  /* Borders */
+  --border-light: 1px solid rgba(255, 255, 255, 0.1);
+  --border-accent: 1px solid rgba(77, 238, 234, 0.3);
+  
+  /* Animation timings */
+  --transition-fast: 0.3s;
+  --transition-medium: 0.5s;
+  --transition-slow: 0.8s;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 5rem;
+  
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-circle: 50%;
+}
+
+/* Dark mode tweaks if needed */
+@media (prefers-color-scheme: dark) {
+  /* Same as above but can be adjusted if needed */
+}

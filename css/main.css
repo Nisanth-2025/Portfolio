@@ -1,0 +1,159 @@
+/**
+ * Main CSS - Combined utility styles
+ * Portfolio: Nisanth S
+ */
+
+/* ===== ACCESSIBILITY STYLES ===== */
+/* Hidden elements for screen readers */
+.visibly-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+}
+
+/* Skip link for keyboard navigation */
+.skip-link {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.skip-link:focus {
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: auto;
+  padding: 15px;
+  background-color: var(--primary-dark);
+  border: 2px solid var(--neon-blue);
+  color: var(--neon-blue);
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(77, 238, 234, 0.5);
+  outline: none;
+  top: 10px;
+}
+
+/* Focus styles for keyboard navigation */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--neon-blue);
+  outline-offset: 2px;
+}
+
+/* Remove focus outline for navigation links but keep keyboard accessibility */
+.nav-links a:focus, 
+.nav-links span:focus,
+.nav-links .active-nav-item:focus {
+  outline: none;
+  text-shadow: 0 0 8px var(--neon-blue);
+  color: var(--neon-blue);
+}
+
+/* Improved contrast for text */
+.project-description,
+.subtitle,
+p {
+  color: #bebebe;
+}
+
+/* ===== FIXES FOR UI ISSUES ===== */
+/* Remove any top line/border from all pages */
+html, body {
+  margin-top: 0 !important;
+  border-top: none !important;
+  padding-top: 0 !important;
+}
+
+/* Prevent any potential edge case where some element might be creating that top line */
+body::before, html::before {
+  display: none !important;
+}
+
+/* Remove outline from logo in navbar */
+.logo:focus, .logo:active, .logo.clicked {
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent !important; /* For mobile */
+}
+
+/* Remove outlines from hamburger button when clicked */
+.hamburger {
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+/* Fix layout issues at specific breakpoints */
+@media (min-width: 768px) and (max-width: 830px) {
+  .nav-links a {
+    margin-left: 15px;
+  }
+}
+
+/* ===== SCROLL TO TOP BUTTON ===== */
+/* Scroll to top button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;  /* Keep at right side */
+  width: 50px;
+  height: 50px;
+  background-color: rgba(77, 238, 234, 0.1);
+  border: 1px solid rgba(77, 238, 234, 0.3);
+  border-radius: 50%;
+  color: var(--neon-blue);  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 99;  /* High z-index to ensure visibility */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  background-color: rgba(77, 238, 234, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(77, 238, 234, 0.3);
+}
+
+/* Ensure proper icon size & positioning */
+.scroll-to-top i {
+  font-size: 20px;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 576px) {
+  .scroll-to-top {
+    width: 40px;
+    height: 40px;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .scroll-to-top i {
+    font-size: 16px;
+  }
+}
