@@ -1,0 +1,37 @@
+# Robots.txt for Nisanth S Portfolio
+# https://nisanth-portfolio.netlify.app
+# Last Updated: July 9, 2025
+
+User-agent: *
+Allow: /
+
+# Allow access to content directories
+Allow: /html/
+Allow: /css/
+Allow: /js/
+Allow: /Images/
+
+# Disallow access to specific files
+Disallow: /netlify.toml
+Disallow: /.github/
+
+# Crawl delay for heavy crawlers
+User-agent: AhrefsBot
+User-agent: SemrushBot
+User-agent: MJ12bot
+Crawl-delay: 10
+
+# Sitemap location
+Sitemap: https://nisanth-portfolio.netlify.app/sitemap.xml
+Allow: /Images/
+
+# Disallow any potential admin or private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.log$
+
+# SEO optimization
+Sitemap: https://nisanth-portfolio.netlify.app/sitemap.xml
+
+# Crawl delay (optional - remove if causing issues)
+Crawl-delay: 1
