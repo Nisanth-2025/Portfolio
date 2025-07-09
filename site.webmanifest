@@ -1,0 +1,44 @@
+{
+  "name": "Nisanth S | Professional Web Developer Portfolio",
+  "short_name": "Nisanth S",
+  "description": "Professional portfolio showcasing modern web development expertise, featuring responsive design, accessibility standards, and cutting-edge technologies.",
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#4DEEEA",
+  "background_color": "#0a0a14",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "categories": ["portfolio", "business", "developer", "technology"],
+  "copyright": "© 2025 Nisanth S. All Rights Reserved.",
+  "screenshots": [
+    {
+      "src": "/Images/Portfolio_Screenshot_Desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Desktop view of Nisanth S Portfolio"
+    },
+    {
+      "src": "/Images/Portfolio_Screenshot_Mobile.png", 
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Mobile view of Nisanth S Portfolio"
+    }
+  ]
+}
