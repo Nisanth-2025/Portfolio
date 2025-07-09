@@ -1,0 +1,41 @@
+/* Footer styling */
+footer {
+  background-color: var(--secondary-dark);
+  padding: 20px 0;
+  text-align: center;
+  color: #ffffff;
+  font-size: 14px;
+  width: 100%;
+  margin-top: auto;
+  clear: both;
+  position: relative;
+}
+
+.copyright {
+  text-align: center;
+  color: var(--neon-blue);
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.copyright p {
+  margin: 0;
+  color: var(--neon-blue);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Ensure body has proper structure for sticky footer */
+html, body {
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
