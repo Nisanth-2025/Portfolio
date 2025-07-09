@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: #0a0a14; color: #ffffff; border-top: none; margin-top: 0; padding-top: 0;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>About Me - Nisanth S</title>
+  <!-- Prevent FOUC (Flash Of Unstyled Content) and page transition flashes -->
+  <style>
+    html, body { background-color: #0a0a14 !important; color: #ffffff; }
+  </style>
+  <script>
+    document.documentElement.style.backgroundColor = '#0a0a14';
+    document.documentElement.style.visibility = 'visible';  </script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">  
+  
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="../css/typography.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/image-optimization.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <!-- JavaScript -->
+  <style>
+    :root {
+      --primary-dark: #0a0a14;
+      --secondary-dark: #121225;
+      --text-color: #ffffff;
+      --text-muted: #bebebe;
+      --card-bg: rgba(18, 18, 37, 0.7);
+      --card-border: rgba(77, 238, 234, 0.1);
+      --neon-blue: #4DEEEA;
+      --neon-blue-glow: 0 0 10px rgba(77, 238, 234, 0.5);
+      --grid-color: rgba(77, 238, 234, 0.05);
+      --transition-speed: 0.5s;
+      
+      /* Animation Curves */
+      --ultra-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --premium-ease: cubic-bezier(0.4, 0, 0.2, 1);
+      --silk-transition: cubic-bezier(0.23, 1, 0.32, 1);
+      --butter-smooth: cubic-bezier(0.165, 0.84, 0.44, 1);
+      --premium-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: var(--primary-dark);
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+      /* About Page Specific Styles */
+    .about-section {
+      padding: 150px 0 100px;
+      position: relative;
+      overflow: hidden;
+      background-color: var(--primary-dark);
+      color: var(--text-color);
+    }
+  
+    
+    .about-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+    
+    .section-title {
+      font-size: 48px;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 3px;
+      background-color: var(--neon-blue);
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: var(--neon-blue-glow);
+    }
+    
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    
+    .about-image {
+      position: relative;
+      max-width: 300px; /* Match the image size */
+      margin-left: 150px; /* Move closer to the content */
+    }
+    
+    .about-image img {
+      width: 100%;
+      border-radius: 20px;
+      border: 3px solid rgba(77, 238, 234, 0.5);
+      box-shadow: 0 0 20px rgba(77, 238, 234, 0.5);
+    }
+    
+    .about-image::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 1px solid var(--neon-blue);
+      border-radius: 20px;
+      top: 10px; /* Adjusted to fit the image */
+      left: 10px; /* Adjusted to fit the image */
+      z-index: -1;
+    }
+    
+    .about-text h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    
+    .about-text p {
+      margin-bottom: 20px;
+      line-height: 1.7;
+      color: #bebebe;
+    }
+    
+    .highlight {
+      color: var(--neon-blue);
+      text-shadow: var(--neon-blue-glow);
+    }
+    
+    .personal-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin: 40px 0;
+    }
+    
+    .info-item {
+      margin-bottom: 15px;
+    }
+    
+    .info-item span {
+      font-weight: bold;
+      margin-right: 10px;
+      color: var(--neon-blue);
+    }
+    
+    .skills-section {
+      padding: 80px 0;
+      position: relative;
+    }
+    
+    .skills-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 40px;
+    }
+    
+    .skill-category {
+      background-color: rgba(18, 18, 37, 0.6);
+      border-radius: 15px;
+      padding: 30px;
+      border: 1px solid rgba(77, 238, 234, 0.2);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .skill-category:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      border-color: rgba(77, 238, 234, 0.5);
+    }
+    
+    .skill-category::before {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, rgba(77, 238, 234, 0.1) 0%, rgba(10, 10, 20, 0) 70%);
+      top: -20px;
+      right: -20px;
+      border-radius: 50%;
+      z-index: 0;
+    }
+    
+    .skill-category h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: var(--neon-blue);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .skill-list {
+      list-style: none;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .skill-list li {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .skill-list li i {
+      color: var(--neon-blue);
+      margin-right: 10px;
+    }
+    
+    .neon-grid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: 50px 50px;
+      background-image:
+        linear-gradient(to right, rgba(77, 238, 234, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(77, 238, 234, 0.05) 1px, transparent 1px);
+      z-index: -2;
+    }
+    
+    .btn {
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    
+    
+    .contact-section {
+      text-align: center;
+      padding: 60px 0;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+      .social-link {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: rgba(18, 18, 37, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--neon-blue);
+      font-size: 22px;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(77, 238, 234, 0.2);
+    }
+    
+    .social-link:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(77, 238, 234, 0.5);
+      color: var(--neon-blue); /* Ensure color stays blue on hover */
+    }
+    .profile-pic {
+      height: auto; /* Set height to auto to maintain aspect ratio */
+      max-width: 300px; /* Limit the width to a reasonable size */
+      border-radius: 20px; /* Add rounded corners for consistency */
+      box-shadow: 0 0 20px rgba(77, 238, 234, 0.5);
+    }
+    
+    @media screen and (max-width: 992px) {
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .about-image {
+        margin-bottom: 40px;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .section-title {
+        font-size: 36px;
+      }
+      
+      .personal-info {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media screen and (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;        background-color: rgba(10, 10, 20, 0.98);
+        /* backdrop-filter removed as requested */
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 20px;
+        transform: translateX(-100%);
+        transition: transform 0.4s ease;
+        border-bottom: 1px solid rgba(77, 238, 234, 0.2);
+      }
+      
+      .nav-links.active {
+        transform: translateX(0);
+      }
+      
+      .hamburger {
+        display: flex;
+      }
+    }
+    
+    @media screen and (max-width: 576px) {
+      .section-title {
+        font-size: 30px;
+      }
+      
+      .about-text h2 {
+        font-size: 28px;
+      }
+    }    /* Custom cursor effect */
+    /* Cursor effects disabled for better UX */
+    
+    /* Enhanced Background Elements */
+    .bg-animated-gradient {
+      position: fixed;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: transparent;
+      z-index: -3;
+      pointer-events: none;
+    }
+    
+    .bg-animated-gradient::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(
+        circle at center,
+        rgba(77, 238, 234, 0.03) 0%,
+        rgba(106, 119, 255, 0.02) 25%,
+        rgba(0, 0, 0, 0) 70%
+      );
+      animation: rotateGradient 30s linear infinite;
+    }
+    
+    @keyframes rotateGradient {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    
+    /* Glowing Orbs */
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      opacity: 0.3;
+      filter: blur(60px);
+      pointer-events: none;
+      z-index: -2;
+    }
+    
+    .orb-1 {
+      top: 15%;
+      left: 10%;
+      width: 300px;
+      height: 300px;
+      background-color: rgba(77, 238, 234, 0.2);
+      animation: floatAnimation 15s ease-in-out infinite alternate;
+    }
+    
+    .orb-2 {
+      bottom: 10%;
+      right: 15%;
+      width: 400px;
+      height: 400px;
+      background-color: rgba(106, 119, 255, 0.15);
+      animation: floatAnimation 18s ease-in-out infinite alternate-reverse;
+    }
+    
+    @keyframes floatAnimation {
+      0% {
+        transform: translate(0, 0);
+      }
+      50% {
+        transform: translate(-20px, -30px);
+      }
+      100% {
+        transform: translate(20px, 20px);
+      }
+    }      /* Scroll to top styles moved to scroll-to-top.css */
+      /* Footer styles are now in external footer.css */
+    
+    .page-transition {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;      background-color: rgba(18, 18, 37, 0.98);
+      /* backdrop-filter removed as requested */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+    
+    .page-transition.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    
+    .transition-logo {
+      font-size: 48px;
+      color: var(--neon-blue);
+      font-weight: bold;
+      text-shadow: 0 0 10px rgba(77, 238, 234, 0.7);
+    }
+  </style>
+</head>
+<body>
+  <!-- Custom cursor elements -->
+  <!-- Background effects and page structure -->
+  
+  <!-- Background effects -->
+  <div class="neon-grid"></div>
+  <div class="bg-animated-gradient"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  
+  <!-- Page Transition Overlay -->
+  <div id="page-transition" class="page-transition"></div>
+  
+  <header>
+    <div class="container">      <nav>
+        <a  href="../index.html" class="logo">Nisa<span>nth S</span></a>        
+        <div class="nav-links">
+          <a href="../index.html">Home</a>
+          <span class="active-nav-item" aria-current="page">About Me</span>
+          <a href="./projects.html">Projects</a>
+          <a href="./resume.html">Resume</a>
+          <a href="./contact.html">Contact Me</a>
+        </div>
+        <div class="hamburger">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="about-section">
+      <div class="container content-container">
+        <div class="about-header">
+          <h1 class="section-title">About <span class="highlight">Me</span></h1>
+        </div>
+          <div class="about-content">
+          <div class="about-image">
+            <img class="profile-pic" src="../Images/Proff_Pic.png" alt="Nisanth S" loading="lazy">
+          </div>
+          
+          <div class="about-text">
+            <h2>I'm <span class="highlight">Nisanth S</span></h2>
+            <p>I am a first-year B.Tech student specializing in Computer Science and Engineering (CSE), with a strong passion for programming and technology. My programming skills and eagerness to learn new technologies enable me to tackle complex challenges and offer effective support in dynamic environments. I am committed to growing my expertise in software development and technology, and I am always looking for opportunities to collaborate, learn, and make an impact in the tech world.</p>
+            
+            <div class="personal-info">
+              <div class="info-column">
+                <div class="info-item">
+                  <span>Name:</span> Nisanth S
+                </div>
+                <div class="info-item">
+                  <span>Email:</span> Nisanth252025@gmail.com
+                </div>
+                <div class="info-item">
+                  <span>Phone:</span> +91 7358900641
+                </div>
+              </div>
+              
+              <div class="info-column">
+                <div class="info-item">
+                  <span>Location:</span> Bengaluru, India
+                </div>
+                <div class="info-item">
+                  <span>Profession:</span> Student
+                </div>
+                <div class="info-item">
+                  <span>Interests:</span> Software Development, Web Development 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="neon-grid"></div>
+    </section>
+    
+    <section class="skills-section">
+      <div class="container">
+        <div class="skills-header">
+          <h2 class="section-title">My <span class="highlight">Skills</span></h2>
+        </div>
+
+       
+        
+        <div class="skills-container">
+
+ <div class="skill-category">
+            <h3><i class="fas fa-code"></i> Programming Languages</h3>
+            <ul class="skill-list">
+              <li><i class="fas fa-check-circle"></i> Python</li>
+              <li><i class="fas fa-check-circle"></i> Java</li>
+              <li><i class="fas fa-check-circle"></i> C++</li>
+              <li><i class="fas fa-check-circle"></i> C</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3><i class="fas fa-code"></i> Frontend Development</h3>
+            <ul class="skill-list">
+              <li><i class="fas fa-check-circle"></i> HTML5</li>
+              <li><i class="fas fa-check-circle"></i> CSS3</li>
+            </ul>
+          </div>
+          
+          <div class="skill-category">
+            <h3><i class="fas fa-server"></i> Backend Development</h3>
+            <ul class="skill-list">
+
+            </ul>
+          </div>
+          
+          <div class="skill-category">
+            <h3><i class="fas fa-tools"></i> Tools & Others</h3>
+            <ul class="skill-list">
+              <li><i class="fas fa-check-circle"></i> Git/GitHub</li>
+              <li><i class="fas fa-check-circle"></i> Netlify</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="neon-grid"></div>
+    </section>
+    
+    <section class="contact-section">
+      <div class="container">
+        <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
+        <p>Feel free to reach out to me for collaboration or just to say hello!</p>
+        
+        <div class="social-links">
+          <a href="https://github.com/Nisanth-2025" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/nisanth-s-835b58318/" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://x.com/NisanthS677130" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="mailto:Nisanth252025@gmail.com" target="_blank" class="social-link"><i class="fas fa-envelope"></i></a>
+        </div>
+
+      </div>
+      <div class="neon-grid"></div>
+    </section>
+  </main>
+  <footer>
+      <div class="copyright">
+        <p>&copy; 2025 Nisanth S. All Rights Reserved.</p>
+      </div>
+  </footer>
+  
+  <div class="scroll-to-top" id="scroll-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/image-optimization.js" defer></script>
+  <script src="../js/transitions.js"></script>
+  <script src="../js/scroll-utilities.js"></script>
+  <script src="../js/effects.js"></script>
+  <script>
+    // Scroll to top button functionality
+    const scrollToTopBtn = document.getElementById('scroll-to-top');
+
+    const toggleScrollToTopBtn = () => {
+      if (window.scrollY > 300) {
+        scrollToTopBtn.classList.add('visible');
+      } else {
+        scrollToTopBtn.classList.remove('visible');
+      }
+    };
+
+    window.addEventListener('scroll', toggleScrollToTopBtn);
+
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+  <script>
+    const pageTransition = document.getElementById('page-transition');
+    
+    function fadeIn(element) {
+      element.classList.add('active');
+    }
+    
+    function fadeOut(element) {
+      element.classList.remove('active');
+    }
+    
+    // Simulate page load transition
+    window.addEventListener('load', () => {
+      fadeIn(pageTransition);
+      
+      setTimeout(() => {
+        fadeOut(pageTransition);
+      }, 2000); // Adjust duration as needed
+    });
+  </script>
+  
+  <script>
+    // Final check to prevent any background flashes
+    window.addEventListener('load', () => {
+      document.documentElement.style.backgroundColor = '#0a0a14';
+      document.body.style.backgroundColor = '#0a0a14';
+    });
+    window.addEventListener('pageshow', () => {
+      document.documentElement.style.backgroundColor = '#0a0a14';
+      document.body.style.backgroundColor = '#0a0a14';
+    });
+  </script>
+</body>
+</html>
